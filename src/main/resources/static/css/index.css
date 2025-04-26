@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'TNH Xuong';
+    src: url('static/fonts/TNH Xuong.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body
+{
+    font-family: 'TNH Xuong', sans-serif;
+    margin: 0;
+}
+
+.header
+{
+    display: flex;
+    justify-content: center;
+    min-height: 80px;
+    background-color: #6d0404;
+}
+
+.title
+{
+    color: #fff;
+}
+
+.main-section
+{
+    padding: 1%;
+    background-color: #fefdf8;
+    text-align: center;
+    color: #000;
+}
+
+.info
+{
+    margin-top: 0;
+}
+
+.message
+{
+    font-size: larger;
+    color: #e0012c;
+}
+
+.seat-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-cols), 60px);
+    grid-template-rows: repeat(var(--grid-rows), 70px);
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+
+.seat button {
+    width: 50px;
+    height: 50px;
+    font-family: 'TNH Xuong', sans-serif;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.available {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.reserved {
+    background-color: #f44336;
+    color: white;
+}
+
+
+.cancel-title
+{
+    margin-top: 0px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    font-size: medium;
+}
+
+.modal-content {
+    background-color: #fefdf8;
+    margin: 20% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50vh;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.close {
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal label
+{
+    margin-right: 10px;
+}
+
+.modal input
+{
+    font-family: 'TNH Xuong', sans-serif;
+    font-size: small;
+    padding: 5px;
+    letter-spacing: 1px;
+}
+
+.modal button
+{
+    font-family: 'TNH Xuong', sans-serif;
+    margin-right: 5px;
+    display: flex;
+    margin-left: auto;
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    font-size: medium;
+}
+
+
+

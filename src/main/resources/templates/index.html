@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel='stylesheet' type='text/css' media='screen' href='.\css\index.css'>
+        <title th:text="${movie.title}"></title>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1 class="title" th:text="${movie.title}"></h1>
+        </div>
+
+        <div class="main-section">
+            <p class="info">Thể loại: <span th:text="${movie.genre}"></span></p>
+            <p class="info">Giá vé: <span th:text="${movie.ticketPrice}"></span></p>
+
+            <div class="message" th:text="${message}"></div>
+
+            <h2>Danh sách ghế</h2>
+            <div class="seat-grid"
+                 th:style="'--grid-cols:' + ${columns} + '; --grid-rows:' + ${rows} + ';'">
+
+                <div th:each="seat : ${seats}" class="seat">
+
+                    <!-- BOOK FORM -->
+                    <form th:if="${seat.isAvailable()}" action="/reserve" method="post">
+                        <button name="seatName"
+                                type="submit"
+                                th:value="${seat.name}"
+                                th:text="${seat.name}"
+                                class="available">
+                        </button>
+                    </form>
+
+                    <!-- CANCEL FORM -->
+                    <form th:if="${!seat.isAvailable()}" action="/cancel" method="post">
+                        <button type="button"
+                                class="reserved"
+                                th:text="${seat.name}"
+                                th:attr="data-seat-name=${seat.name}"
+                                onclick="openCancelModalFromAttr(this)">
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="cancelModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeCancelModal()">&times;</span>
+                <h2 class="cancel-title">Huỷ vé</h2>
+                <form action="/cancel" method="post">
+                    <p id="cancelModalSeat"></p>
+                    <input type="hidden" name="seatName" id="seatNameInput">
+                    <label>Mã huỷ vé:</label>
+                    <input type="text" name="cancelCode" required>
+                    <button type="submit">Huỷ vé</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    function openCancelModalFromAttr(buttonElement) {
+        const seatName = buttonElement.getAttribute('data-seat-name');
+        openCancelModal(seatName); // your existing modal opening logic
+    }
+
+    function openCancelModal(seatName) {
+        document.getElementById("cancelModal").style.display = "block";
+        document.getElementById("cancelModalSeat").textContent = "Ghế: " + seatName;
+        document.getElementById("seatNameInput").value = seatName;
+    }
+
+    function closeCancelModal() {
+        document.getElementById("cancelModal").style.display = "none";
+    }
+
+    // Optional: close when clicking outside the modal
+    window.onclick = function(event) {
+        const modal = document.getElementById("cancelModal");
+        if (event.target === modal) {
+            closeCancelModal();
+        }
+    }
+</script>

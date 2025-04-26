@@ -1,0 +1,63 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# Build output
+/target/
+
+# Logs
+*.log
+
+# Maven
+.mvn/
+!**/src/main/**/.keep
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Environment / Properties files
+*.env
+*.properties.local
+application-*.yml
+application-*.yaml
+application-*.properties
+
+# JetBrains Rider
+.idea/
+
+# Eclipse (if imported at any point)
+*.classpath
+*.project
+*.settings/
+
+# Local development files
+*.swp
+*.bak
+*.tmp
+
+# VS Code (if used)
+.vscode/
+
+# Node modules (if frontend involved)
+node_modules/
+
+# Coverage reports
+/coverage/
+*.exec
+jacoco.exec
+
+# Others
+*.jar
+*.war
+*.ear

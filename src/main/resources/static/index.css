@@ -1,0 +1,111 @@
+body
+{
+    margin: 0;
+}
+
+.header
+{
+    display: flex;
+    justify-content: center;
+    font-family: 'Sarabun', sans-serif;
+    min-height: 80px;
+    background-color: #e0012c;
+}
+
+nav
+{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+nav a
+{
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    margin: 3px 18px 0;
+    letter-spacing: 0.06em;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+.logo-section
+{
+    margin-bottom: 2%;
+}
+
+.logo-image
+{
+    height: auto;
+    width: 40%;
+}
+
+.main-section
+{
+    padding-bottom: 1%;
+    background-color: #fefdf8;
+    text-align: center;
+    color: #000;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.members-id
+{
+    font-size: 30px;
+    font-weight: bold;
+    color: #e0012c;
+}
+
+h1, h2, h3, h4
+{
+    text-align: center;
+    color: #e0012c;
+}
+.message
+{
+    display: inline-block;
+    width: 60%;
+    text-align: justify;
+}
+
+li
+{
+    margin: 3%;
+}
+
+hr
+{
+    border-top: 3px solid red;
+    width: 40%;
+}
+
+.footer
+{
+    font-family: 'Sarabun', sans-serif;
+    padding: 1%;
+    font-size: 13px;
+    text-align: center;
+    color: #fff;
+    background-color: #e0012c;
+}
+
+.fun_fact
+{
+    width: 55%;
+    align-self: center;
+    border: 2px solid #e0012c;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.fun_fact td
+{
+    font-size: 14px;
+}
